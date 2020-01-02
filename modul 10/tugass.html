@@ -1,0 +1,49 @@
+<html>
+    <head><style>
+            .redtext {
+                color: white;
+            }
+            </style></head>
+    <link rel='stylesheet' type='text/css' href='tugas1.css'>
+    <title>TIO SEPTIADI MURBIANTORO</title>
+    <body>
+        <xml ID='dsoData' SRC='data.xml'/>
+        <h2 class="redtext" align="center">TIO SEPTIADI MURBIANTORO</h2>
+        <h2 class="redtext" align="center">L200170099</h2><br><br>
+        <script type="text/javascript">
+            if (window.XMLHttpRequest)
+            {
+            xmlhttp=new XMLHttpRequest();
+            }
+            else
+            {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.open("GET","data.xml",false);
+            xmlhttp.send();
+            xmlDoc=xmlhttp.responseXML;
+document.write("<center>");
+document.write("<table border='0'>");
+var x=xmlDoc.getElementsByTagName("ID");
+document.write("<tr><td width='30%' >");
+document.write("<b>NIM</b>");
+document.write("</td><td>");
+document.write("<b>Nama</b>");
+document.write("</td><td>");
+document.write("<b>Kota</b>");
+document.write("</td></tr>");
+for (i=0;i<x.length;i++)
+    {
+    document.write("<tr><td>");
+    document.write(x[i].getElementsByTagName("NIM")[0].childNodes[0].nodeValue);
+    document.write("</td><td>");
+    document.write(x[i].getElementsByTagName("Nama")[0].childNodes[0].nodeValue);
+    document.write("</td><td>");
+    document.write(x[i].getElementsByTagName("Kota")[0].childNodes[0].nodeValue);
+    document.write("</td><td>");
+    }
+document.write("</table>");
+document.write("</center>");
+</script>
+</body>
+</html>
